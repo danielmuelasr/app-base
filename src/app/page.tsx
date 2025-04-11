@@ -1,5 +1,6 @@
 'use client';
 
+import { AuthService } from '@/lib/services/auth.service';
 import { Button, Container, Stack } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { PasswordElement, TextFieldElement, useForm } from 'react-hook-form-mui';
@@ -16,7 +17,15 @@ export default function Home() {
   return (
     <Container>
 
-      <form onSubmit={handleSubmit((data) => console.log(data))} noValidate>
+      <form onSubmit={handleSubmit(async (data) => {
+        try {
+          const loginData = await AuthService.login(data);
+          console.log(loginData);
+        }
+        catch (error) {
+          console.error(error);
+        }
+      })} noValidate>
         <Stack spacing={2}>
           <Typography variant="h6" component="div" sx={{ flexGrow: 2 }}>
             Iniciar sesión

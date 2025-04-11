@@ -64,12 +64,24 @@ const theme = createTheme({
                 variant: 'filled',
             },
         },
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    fontFamily: 'var(--font-nunito)',
+                    textTransform: 'uppercase',
+                    fontWeight: 900,
+                    fontSize: '0.70rem',
+                    borderRadius: '0.5rem',
+                    padding: '0.5rem 1rem',
+                },
+            },
+        },
         MuiInputLabel: {
             styleOverrides: {
                 filled: {
                     textTransform: 'uppercase',
                     fontWeight: 900,
-                    fontSize: '0.75rem',
+                    fontSize: '0.70rem',
                     fontFamily: 'var(--font-nunito)',
                 },
             },
