@@ -59,6 +59,13 @@ const theme = createTheme({
         },
     },
     components: {
+        MuiAlert: {
+            styleOverrides: {
+                root: {
+                    borderRadius: '0.5rem',
+                },
+            }
+        },
         MuiTextField: {
             defaultProps: {
                 variant: 'filled',

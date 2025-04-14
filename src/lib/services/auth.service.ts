@@ -13,12 +13,7 @@ export class AuthService {
         }
     }
 
-
     private static handleError(error: any): void {
-        if (error instanceof ApiError) {
-            throw new Error(JSON.stringify(error.data));
-        } else {
-            throw new Error(JSON.stringify({ message: "Error desconocido", details: error }));
-        }
+        throw error;
     }
 }

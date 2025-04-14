@@ -40,7 +40,7 @@ export const getResource = async <T>(resource: string, id?: string): Promise<T |
         return response.data;
     } catch (error: any) {
         handleApiError(error);
-        return null;
+        throw error;
     }
 };
 
@@ -50,6 +50,6 @@ export const postResource = async (resource: string, data: any = {}) => {
         return response.data;
     } catch (error: any) {
         handleApiError(error);
-        return null;
+        throw error;
     }
 };
