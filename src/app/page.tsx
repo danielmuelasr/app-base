@@ -1,7 +1,7 @@
 'use client';
 
 import { AuthService } from '@/lib/services/auth.service';
-import { Alert, AlertTitle, Box, Button, Collapse, Container, IconButton, Stack } from '@mui/material';
+import { Alert, Box, Button, Collapse, Container, IconButton, Stack } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import { PasswordElement, TextFieldElement, useForm } from 'react-hook-form-mui';
@@ -45,7 +45,7 @@ export default function Home() {
         </Collapse>
       </Box>
 
-      <form onSubmit={handleSubmit(async (data) => {
+      <form method="POST" onSubmit={handleSubmit(async (data) => {
         try {
           const loginData = await AuthService.login(data);
           console.log(loginData);
@@ -101,7 +101,6 @@ export default function Home() {
 
         </Stack>
       </form>
-
     </Container>
   );
 }
